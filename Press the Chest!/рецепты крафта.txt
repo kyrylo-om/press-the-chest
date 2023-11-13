@@ -5,3 +5,5 @@
 звезда + золото + изумруд == тотем (спасает от смерти регенит 3 жизни (ну или две))
 алмаз + изумруд == пузырек удачи (след. предмет два раза)
 железо + золото == часы (без динамита)
+
+This is a receipts list for crafting which wasn't implemented in the end. You can still see a crafting table icon in the game, although the pop-up menu does nothing.
