@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Press the Chest!</title>
+    <link href="css.css" rel="stylesheet">
+</head>
+<body>
+    <div id="shortcut1">МАГАЗИН</div>
+    <div id="shortcut2">ВЕРСТАК</div>
+    <div class="crtable" style="visibility: hidden; transition: all 0.3s ease-in-out" id="crtableid">
+       <div class="midcolumn">
+           <h1 style="position: absolute; margin-top: 100px; font-size: 25px; font-weight: normal; text-align: center; width: 450px; color: grey">КРАФТ</h1>
+            <div class="crtablediv">
+               <div style="width: 170px; height: 170px">
+                    <div class="crslot"></div>
+                    <div class="crslot"></div>
+                    <div class="crslot"></div>
+                    <div class="crslot"></div>
+                    <div class="crslot"></div>
+                    <div class="crslot"></div>
+                    <div class="crslot"></div>
+                    <div class="crslot"></div>
+                    <div class="crslot"></div>
+                </div>
+                <div style="background-image: url(img/arrow.png); margin-left: 200px; width: 54px; height: 44px; background-size: 100%; position: absolute; margin-top: -110px"></div>
+                <div class="crslot" style="width: 64px; height: 64px; position: absolute; display: block; margin-left: 300px; margin-top: -122px"></div>
+                <input type="button" value="ДОБАВИТЬ" class="crinvbutton" onclick="cradditem()">
+            </div>
+        </div>
+        <div class="crinv">
+           <div>
+               <div class="crinvitem" style="background-image: url(img/items/apple.png)" id="crinvitem1"></div>
+           </div>
+           <div style="margin-top: 90px">
+               <div class="crinvitem" style="background-image: url(img/items/apple.png)" id="crinvitem2"></div>
+           </div>
+           <div style="margin-top: 180px">
+               <div class="crinvitem" style="background-image: url(img/items/apple.png)" id="crinvitem3"></div>
+           </div>
+           <div style="margin-top: 270px">
+               <div class="crinvitem" style="background-image: url(img/items/apple.png)" id="crinvitem4"></div>
+           </div>
+        </div>
+        <div class="crinv" style="margin-left: 862px">
+            <div>
+               <div class="crinvitem" style="background-image: url(img/items/apple.png)" id="crinvitem5"></div>
+           </div>
+           <div style="margin-top: 90px">
+               <div class="crinvitem" style="background-image: url(img/items/apple.png)" id="crinvitem6"></div>
+           </div>
+           <div style="margin-top: 180px">
+               <div class="crinvitem" style="background-image: url(img/items/apple.png)" id="crinvitem7"></div>
+           </div>
+           <div style="margin-top: 270px">
+               <div class="crinvitem" style="background-image: url(img/items/apple.png)" id="crinvitem8"></div>
+           </div>
+        </div>
+        <div class="recipesdiv">
+            <h2 style="text-align: center">РЕЦЕПТЫ</h2>
+            <div class="recipe">
+                <div class="recipeimg" style="background-image: url(img/items/emerald.png);"></div>
+                <h1 style="position: absolute; font-size: 45px; margin-left: 90px; margin-top: 25px">+</h1>
+                <div class="recipeimg" style="margin-left: 138px; background-image: url(img/items/powder.png)"></div>
+                <h1 style="position: absolute; font-size: 45px; margin-left: 240px; margin-top: 20px">=</h1>
+                <div class="recipeimg" style="margin-left: 283px; background-image: url(img/items/ender_eye.png)"></div>
+            </div>
+            <div class="recipe"></div>
+            <div class="recipe"></div>
+        </div>
+    </div>
+    <div class="shop" style="visibility: hidden; transition: all 0.3s ease-in-out" id="shopid">
+        <h1 style="transform: rotate(0.75turn); position: absolute; margin-top: 450px; margin-left: -130px" id="shopgoldtext">ЗОЛОТО: 0<img src="img/coin.png" style="width: 100px; position: absolute; margin-top: -35px; margin-left: -10px"></h1>
+        <div class="shopdiv" style="margin-top: 80px">
+            <div class="buydiv">
+                <div class="product" style="background-image: url(img/items/emerald.png)" id="product1"></div>
+                <h2 class="shopitemname">ИЗУМРУД</h2>
+            </div>
+            <div style="display: inline-block; height: 75px; width: 200px;">
+                    <p class="shopprice" id="shopprice1">100</p>
+                <img src="img/coin.png" style="width: 100px; position: absolute; margin-top: -16px; margin-left: 90px">
+            </div>
+            <div class="buydiv" style="width: 500px;">
+                <input type="button" value="-" class="plusminusbutton" onclick="shopchangecountm(1)">
+                <p class="countshop" id="countshop1">1</p>
+                <input type="button" value="+" class="plusminusbutton" style="margin-left: 140px" onclick="shopchangecountp(1)">
+                <input type="button" class="buybutton" value="КУПИТЬ" onclick="buyitem(1)">
+            </div>
+        </div>
+        <div class="shopdiv">
+            <div class="buydiv">
+                <div class="product" style="background-image: url(img/items/diamond.png)" id="product2"></div>
+                <h2 class="shopitemname">АЛМАЗ</h2>
+            </div>
+            <div style="display: inline-block; height: 75px; width: 200px;">
+                    <p class="shopprice" id="shopprice2">90</p>
+                <img src="img/coin.png" style="width: 100px; position: absolute; margin-top: -16px; margin-left: 90px">
+            </div>
+            <div class="buydiv" style="width: 500px;">
+                <input type="button" value="-" class="plusminusbutton" onclick="shopchangecountm(2)">
+                <p class="countshop" id="countshop2">1</p>
+                <input type="button" value="+" class="plusminusbutton" style="margin-left: 140px" onclick="shopchangecountp(2)">
+                <input type="button" class="buybutton" value="КУПИТЬ" onclick="buyitem(2)">
+            </div>
+        </div>
+        <div class="shopdiv">
+            <div class="buydiv">
+                <div class="product" style="background-image: url(img/items/gold.png)" id="product3"></div>
+                <h2 class="shopitemname">ЗОЛОТОЙ СЛИТОК</h2>
+            </div>
+            <div style="display: inline-block; height: 75px; width: 200px;">
+                    <p class="shopprice" id="shopprice3">80</p>
+                <img src="img/coin.png" style="width: 100px; position: absolute; margin-top: -16px; margin-left: 90px">
+            </div>
+            <div class="buydiv" style="width: 500px;">
+                <input type="button" value="-" class="plusminusbutton" onclick="shopchangecountm(3)">
+                <p class="countshop" id="countshop3">1</p>
+                <input type="button" value="+" class="plusminusbutton" style="margin-left: 140px" onclick="shopchangecountp(3)">
+                <input type="button" class="buybutton" value="КУПИТЬ" onclick="buyitem(3)">
+            </div>
+        </div>
+        <div class="shopdiv">
+            <div class="buydiv">
+                <div class="product" style="background-image: url(img/items/iron.png)" id="product4"></div>
+                <h2 class="shopitemname">СТАЛЬНОЙ СЛИТОК</h2>
+            </div>
+            <div style="display: inline-block; height: 75px; width: 200px;">
+                    <p class="shopprice" id="shopprice4">70</p>
+                <img src="img/coin.png" style="width: 100px; position: absolute; margin-top: -16px; margin-left: 90px">
+            </div>
+            <div class="buydiv" style="width: 500px;">
+                <input type="button" value="-" class="plusminusbutton" onclick="shopchangecountm(4)">
+                <p class="countshop" id="countshop4">1</p>
+                <input type="button" value="+" class="plusminusbutton" style="margin-left: 140px" onclick="shopchangecountp(4)">
+                <input type="button" class="buybutton" value="КУПИТЬ" onclick="buyitem(4)">
+            </div>
+        </div>
+        <div class="shopdiv">
+            <div class="buydiv">
+                <div class="product" style="background-image: url(img/items/powder.png)" id="product5"></div>
+                <h2 class="shopitemname">ОГНЕННЫЙ ПОРОШОК</h2>
+            </div>
+            <div style="display: inline-block; height: 75px; width: 200px;">
+                    <p class="shopprice" id="shopprice5">70</p>
+                <img src="img/coin.png" style="width: 100px; position: absolute; margin-top: -16px; margin-left: 90px">
+            </div>
+            <div class="buydiv" style="width: 500px;">
+                <input type="button" value="-" class="plusminusbutton" onclick="shopchangecountm(5)">
+                <p class="countshop" id="countshop5">1</p>
+                <input type="button" value="+" class="plusminusbutton" style="margin-left: 140px" onclick="shopchangecountp(5)">
+                <input type="button" class="buybutton" value="КУПИТЬ" onclick="buyitem(5)">
+            </div>
+        </div>
+        <div class="shopdiv">
+            <div class="buydiv">
+                <div class="product" style="background-image: url(img/items/apple.png)" id="product6"></div>
+                <h2 class="shopitemname">ЯБЛОКО</h2>
+            </div>
+            <div style="display: inline-block; height: 75px; width: 200px;">
+                    <p class="shopprice" id="shopprice6">40</p>
+                <img src="img/coin.png" style="width: 100px; position: absolute; margin-top: -16px; margin-left: 90px">
+            </div>
+            <div class="buydiv" style="width: 500px;">
+                <input type="button" value="-" class="plusminusbutton" onclick="shopchangecountm(6)">
+                <p class="countshop" id="countshop6">1</p>
+                <input type="button" value="+" class="plusminusbutton" style="margin-left: 140px" onclick="shopchangecountp(6)">
+                <input type="button" class="buybutton" value="КУПИТЬ" onclick="buyitem(6)">
+            </div>
+        </div>
+        <div class="shopdiv">
+            <div class="buydiv">
+                <div class="product" style="background-image: url(img/items/flesh.png)" id="product7"></div>
+                <h2 class="shopitemname">МУСОР</h2>
+            </div>
+            <div style="display: inline-block; height: 75px; width: 200px;">
+                    <p class="shopprice" id="shopprice7">10</p>
+                <img src="img/coin.png" style="width: 100px; position: absolute; margin-top: -16px; margin-left: 90px">
+            </div>
+            <div class="buydiv" style="width: 500px;">
+                <input type="button" value="-" class="plusminusbutton" onclick="shopchangecountm(7)">
+                <p class="countshop" id="countshop7">1</p>
+                <input type="button" value="+" class="plusminusbutton" style="margin-left: 140px" onclick="shopchangecountp(7)">
+                <input type="button" class="buybutton" value="КУПИТЬ" onclick="buyitem(7)">
+            </div>
+        </div>
+        <p style="color: red; font-weight: bold; text-align: center; margin-top: 0px" id="shophelptext"></p>
+    </div>
+    <h2 style="margin: 40px; text-align: center" id="scoretext">УРОВЕНЬ 1   |    ОЧКИ: 0</h2>
+    <div id="chestsdiv">
+        <div id="chestdiv1" class="chestdiv">
+            <p class="uptext" id="uptext1"></p>
+            <div class="items" id="item1"></div>
+            <div class="chest" id="chest1"></div>
+            <p class="downtext" id="downtext1"></p>
+        </div>
+        <div id="chestdiv2" class="chestdiv">
+            <p class="uptext" id="uptext2"></p>
+            <div class="items" id="item2"></div>
+            <div class="chest" id="chest2"></div>
+            <p class="downtext" id="downtext2"></p>
+        </div>
+        <div id="chestdiv3" class="chestdiv">
+            <p class="uptext" id="uptext3"></p>
+            <div class="items" id="item3"></div>
+            <div class="chest" id="chest3"></div>
+            <p class="downtext" id="downtext3"></p>
+        </div>
+    </div>
+    <div class="healthbar">
+        <div class="heart" id="heart1"></div>
+        <div class="heart" id="heart2"></div>
+        <div class="heart" id="heart3"></div>
+    </div>
+    <div class="secondarydiv">
+        <div class="button" style="visibility: hidden; opacity: 0" id="button1">
+            <p class="text">ПРОДАТЬ</p>
+        </div>
+        <div class="button" style="margin-left: 755px; visibility: hidden; opacity: 0" id="button2">
+            <p class="text">В ИНВЕНТАРЬ</p>
+        </div>
+        <div class="inventorydiv">
+            <div class="inventory">
+                <div class="slot" id="slot1">
+                   <input value="ПРОДАТЬ" class="invbutton" style="visibility: hidden" id="invbutton1" onclick="sell_from_inv(1)">
+                    <p class="count" id="count1"></p>
+                </div>
+                <div class="slot" id="slot2">
+                   <input value="ПРОДАТЬ" class="invbutton" style="visibility: hidden" id="invbutton2" onclick="sell_from_inv(2)">
+                    <p class="count" id="count2"></p>
+                </div>
+                <div class="slot" id="slot3">
+                   <input value="ПРОДАТЬ" class="invbutton" style="visibility: hidden" id="invbutton3" onclick="sell_from_inv(3)">
+                    <p class="count" id="count3"></p>
+                </div>
+                <div class="slot" id="slot4">
+                   <input value="ПРОДАТЬ" class="invbutton" style="visibility: hidden" id="invbutton4" onclick="sell_from_inv(4)">
+                    <p class="count" id="count4"></p>
+                </div>
+                <div class="slot" id="slot5">
+                   <input value="ПРОДАТЬ" class="invbutton" style="visibility: hidden" id="invbutton5" onclick="sell_from_inv(5)">
+                    <p class="count" id="count5"></p>
+                </div>
+                <div class="slot" id="slot6">
+                   <input value="ПРОДАТЬ" class="invbutton" style="visibility: hidden" id="invbutton6" onclick="sell_from_inv(6)">
+                    <p class="count" id="count6"></p>
+                </div>
+                <div class="slot" id="slot7">
+                   <input value="ПРОДАТЬ" class="invbutton" style="visibility: hidden" id="invbutton7" onclick="sell_from_inv(7)">
+                    <p class="count" id="count7"></p>
+                </div>
+                <div class="slot" id="slot8">
+                   <input value="ПРОДАТЬ" class="invbutton" style="visibility: hidden" id="invbutton8" onclick="sell_from_inv(8)">
+                    <p class="count" id="count8"></p>
+                </div>
+                <div class="slot" id="slot9">
+                   <input value="ПРОДАТЬ" class="invbutton" style="visibility: hidden" id="invbutton9" onclick="sell_from_inv(9)">
+                    <p class="count" id="count9"></p>
+                </div>
+            </div>
+            <p id="goldtext">0<img src="img/coin.png" style="width: 45px; position: absolute; margin-top: -16px; margin-left: -10px"></p>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
